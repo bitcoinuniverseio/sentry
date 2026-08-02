@@ -72,7 +72,7 @@ jobs:
           license-check: true
 
   boundary:
-    name: Public boundary check
+    name: Boundary and history scan
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
