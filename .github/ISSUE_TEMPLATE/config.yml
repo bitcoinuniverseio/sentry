@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a vulnerability
+    url: https://github.com/bitcoinuniverse/sentry/security/advisories/new
+    about: Security reports are private. Never open a public issue for one.
+  - name: Read the specification
+    url: https://github.com/bitcoinuniverse/sentry/blob/main/sentry-protocol.md
+    about: The normative SCIT/1 wire specification.
+  - name: Repository boundary
+    url: https://github.com/bitcoinuniverse/sentry/blob/main/REPOSITORY-BOUNDARY.md
+    about: What belongs in this repository and what belongs in the private one.

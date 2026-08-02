@@ -1,0 +1,43 @@
+name: Specification ambiguity
+description: A sentence in the specification could be implemented two different ways
+labels: [specification]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the most useful report you can file. If two careful readers could
+        implement a sentence differently, that sentence is a defect even when the
+        reference implementation happens to be correct.
+
+  - type: textarea
+    id: sentence
+    attributes:
+      label: The sentence
+      description: Quote it, and give the section number from sentry-protocol.md.
+    validations:
+      required: true
+
+  - type: textarea
+    id: readings
+    attributes:
+      label: The two readings
+      description: What did you think it meant, and what else could it mean?
+    validations:
+      required: true
+
+  - type: textarea
+    id: consequence
+    attributes:
+      label: Byte-level consequence
+      description: >
+        What differs on the wire if an implementer chooses wrong? An accepted
+        transaction that should be rejected, a different derived ID, a different
+        encoding, and so on.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording
+      description: Optional. If you know how to say it unambiguously, say it here.
