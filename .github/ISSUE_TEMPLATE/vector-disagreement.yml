@@ -1,0 +1,54 @@
+name: Conformance vector disagreement
+description: Your implementation computes a different value than the vectors
+labels: [conformance]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A vector mismatch is treated as a specification defect until proven
+        otherwise. Thank you for building an independent implementation.
+
+        If this is a security issue rather than a correctness one, do not file it
+        here. See SECURITY.md.
+
+  - type: input
+    id: vector
+    attributes:
+      label: Which vector
+      description: The name from `node cli.mjs verify`, for example "birth organism id".
+    validations:
+      required: true
+
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Exact inputs
+      description: Every byte you fed in, as hex. Synthetic values only.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: expected
+    attributes:
+      label: Value in the vectors
+    validations:
+      required: true
+
+  - type: input
+    id: actual
+    attributes:
+      label: Value your implementation computed
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Your implementation
+      description: >
+        Language, and a link if it is public. Tell us whether your tagged hash
+        reproduces TaggedHash("BIP0340/challenge", "") correctly, since a wrong
+        construction there makes every later value wrong.
+    validations:
+      required: true
