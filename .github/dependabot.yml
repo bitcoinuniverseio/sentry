@@ -7,6 +7,11 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    # ts-jest currently accepts TypeScript <6; lift this bound only with a
+    # coordinated TypeScript/ts-jest migration.
+    ignore:
+      - dependency-name: typescript
+        versions: ['>=6.0.0']
     commit-message:
       prefix: deps
     groups:
@@ -23,5 +28,9 @@ updates:
       interval: weekly
       day: monday
     open-pull-requests-limit: 5
+    groups:
+      codeql:
+        patterns:
+          - github/codeql-action/*
     commit-message:
       prefix: ci
