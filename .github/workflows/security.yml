@@ -3,7 +3,7 @@ name: Security
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, develop]
   schedule:
     - cron: '17 6 * * 1'
   workflow_dispatch:
@@ -28,6 +28,11 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
+      - name: Install and verify pinned npm
+        run: |
+          npm install --global npm@11.17.0
+          test "$(node --version)" = "v24.19.0"
+          test "$(npm --version)" = "11.17.0"
       - run: npm ci
       - name: Fail on high or critical advisories
         run: npm audit --audit-level=high
@@ -83,6 +88,11 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version-file: .nvmrc
+      - name: Install and verify pinned npm
+        run: |
+          npm install --global npm@11.17.0
+          test "$(node --version)" = "v24.19.0"
+          test "$(npm --version)" = "11.17.0"
       - name: Reject internal-only material in the working tree
         run: node scripts/check-public-boundary.mjs
       - name: Reject internal-only material anywhere in history
