@@ -4,7 +4,7 @@
   "name": "Sentry",
   "classification": "archive",
   "repository": "bitcoinuniverseio/sentry",
-  "documentationUrl": "https://docs.bitcoinuniverse.io/archive/sentry/",
+  "documentationUrl": "https://docs.bitcoinuniverse.io/protocols/",
   "docsRoot": ".",
   "sourceRef": "main",
   "lifecycle": "archived",
